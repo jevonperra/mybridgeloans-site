@@ -1,0 +1,555 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="MyBridge.Loans — Private Money & Bridge Lending. Trust Deed Investing." />
+  <title>MyBridge.Loans | Private Money & Bridge Lending</title>
+
+  <style>
+    :root{
+      /* Conservative bank palette */
+      --bg: #ffffff;
+      --surface: #ffffff;
+      --surface2: #f6f8fb;
+      --text: #0b1220;
+      --muted: #5b677a;
+      --line: #dde3ec;
+
+      --navy: #0b2a4a;     /* primary */
+      --navy2: #123a64;    /* hover */
+      --chip: #eef3f9;
+
+      --radius: 14px;
+      --max: 1120px;
+      --pad: clamp(18px, 3vw, 28px);
+      --h1: clamp(34px, 5vw, 56px);
+      --h2: clamp(20px, 3vw, 30px);
+      --p: 16px;
+      --btn: 44px;
+
+      /* More conservative shadows */
+      --shadow: 0 6px 18px rgba(15, 23, 42, .08);
+
+      --focus: 2px solid rgba(11, 42, 74, .35);
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body{
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.45;
+    }
+
+    /* Header */
+    header{
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,.92);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(10px) saturate(150%);
+    }
+    .nav{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 12px var(--pad);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap: 12px;
+      text-decoration:none;
+      color: var(--text);
+      min-width: 220px;
+    }
+    .brand img{
+      width: 160px;
+      height: auto;
+      display:block;
+    }
+    .brand small{
+      display:block;
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 2px;
+    }
+
+    nav{
+      display:flex;
+      align-items:center;
+      gap: 6px;
+    }
+    nav a{
+      color: var(--muted);
+      text-decoration:none;
+      font-size: 14px;
+      padding: 10px 12px;
+      border-radius: 999px;
+    }
+    nav a:hover{
+      color: var(--navy);
+      background: rgba(18,58,100,.06);
+    }
+
+    .nav-cta{ display:flex; gap: 10px; align-items:center; }
+
+    .btn{
+      height: var(--btn);
+      padding: 0 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(11,42,74,.18);
+      background: transparent;
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 14px;
+      cursor: pointer;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      text-decoration:none;
+      white-space: nowrap;
+    }
+    .btn:hover{ background: rgba(18,58,100,.06); }
+    .btn.primary{
+      background: var(--navy);
+      color: #fff;
+      border-color: rgba(11,42,74,.25);
+    }
+    .btn.primary:hover{ background: var(--navy2); }
+
+    main{ padding-bottom: 70px; }
+
+    .wrap{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 var(--pad);
+    }
+
+    /* Bank-like hero */
+    .hero{
+      background: linear-gradient(180deg, #ffffff 0%, var(--surface2) 100%);
+      border-bottom: 1px solid var(--line);
+    }
+    .hero-inner{
+      padding: clamp(42px, 6vw, 74px) 0 clamp(26px, 4vw, 48px);
+      text-align: center;
+    }
+    .eyebrow{
+      display:inline-flex;
+      gap:10px;
+      align-items:center;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--chip);
+      border: 1px solid rgba(11,42,74,.10);
+      color: var(--navy);
+      font-size: 13px;
+      font-weight: 600;
+    }
+    h1{
+      margin: 16px auto 10px;
+      max-width: 22ch;
+      font-size: var(--h1);
+      line-height: 1.06;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+    .sub{
+      margin: 0 auto;
+      max-width: 72ch;
+      font-size: 18px;
+      color: var(--muted);
+    }
+    .hero-actions{
+      margin-top: 22px;
+      display:flex;
+      gap: 12px;
+      justify-content:center;
+      flex-wrap: wrap;
+    }
+
+    /* Content blocks: more “bank brochure” */
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 16px;
+      margin-top: 22px;
+    }
+    .card{
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: var(--shadow);
+    }
+    .card h2{
+      margin: 0 0 8px;
+      font-size: var(--h2);
+      letter-spacing: -0.01em;
+      color: var(--text);
+    }
+    .card p{
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: var(--p);
+    }
+    .pillrow{ display:flex; flex-wrap:wrap; gap:8px; margin-top: 12px; }
+    .pill{
+      font-size: 13px;
+      color: var(--navy);
+      background: var(--chip);
+      border: 1px solid rgba(11,42,74,.10);
+      padding: 7px 10px;
+      border-radius: 999px;
+      font-weight: 600;
+    }
+    .span-7{ grid-column: span 7; }
+    .span-5{ grid-column: span 5; }
+    .span-12{ grid-column: span 12; }
+
+    /* Contact section */
+    .contact{
+      margin-top: 18px;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: #fff;
+      padding: 20px;
+      box-shadow: var(--shadow);
+    }
+    .contact-head{
+      display:flex;
+      align-items:flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+    .contact-head h2{ margin:0; font-size: clamp(20px, 2.5vw, 28px); }
+    .contact-head p{ margin:6px 0 0; color: var(--muted); max-width: 72ch; }
+
+    form{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 12px;
+    }
+    label{
+      display:block;
+      font-size: 13px;
+      color: #23324a;
+      margin-bottom: 6px;
+      font-weight: 700;
+    }
+    .field{ grid-column: span 6; }
+    .field.full{ grid-column: span 12; }
+
+    input, select, textarea{
+      width: 100%;
+      border-radius: 12px;
+      border: 1px solid rgba(11,42,74,.18);
+      padding: 12px 12px;
+      font-size: 15px;
+      outline: none;
+      background: #fff;
+    }
+    input:focus, select:focus, textarea:focus{
+      outline: var(--focus);
+      outline-offset: 2px;
+      border-color: rgba(11,42,74,.35);
+    }
+    textarea{ min-height: 120px; resize: vertical; }
+
+    .form-actions{
+      grid-column: span 12;
+      display:flex;
+      align-items:flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 4px;
+    }
+    .fineprint{
+      color: var(--muted);
+      font-size: 12.5px;
+      max-width: 82ch;
+      line-height: 1.35;
+    }
+
+    footer{
+      border-top: 1px solid var(--line);
+      padding: 22px 0;
+      color: var(--muted);
+      font-size: 13px;
+      background: #fff;
+    }
+    .foot{
+      display:flex;
+      justify-content: space-between;
+      align-items:center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .foot a{
+      color: var(--muted);
+      text-decoration:none;
+      padding: 6px 10px;
+      border-radius: 999px;
+    }
+    .foot a:hover{ background: rgba(18,58,100,.06); color: var(--navy); }
+
+    @media (max-width: 900px){
+      .span-7, .span-5 { grid-column: span 12; }
+      .field{ grid-column: span 12; }
+      nav{ display:none; }
+      .brand{ min-width: unset; }
+      .brand img{ width: 150px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="nav">
+      <a class="brand" href="#top" aria-label="MyBridge.Loans home">
+        <!-- Put your logo file next to index.html and set the filename below -->
+        <img id="logo" alt="mybridge.loans" />
+        <div style="display:none" id="brandText">
+          <strong>mybridge.loans</strong>
+          <small>Private money &amp; bridge lending</small>
+        </div>
+      </a>
+
+      <nav aria-label="Primary">
+        <a href="#borrow">Borrow</a>
+        <a href="#invest">Invest</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="nav-cta">
+        <a class="btn" href="#contact" data-intent="invest">Invest</a>
+        <a class="btn primary" href="#contact" data-intent="borrow">Borrow</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-inner">
+        <div class="eyebrow">Private Capital • Real Estate–Backed</div>
+        <h1>Private Money &amp; Bridge Lending. Trust Deed Investing.</h1>
+        <p class="sub">
+          mybridge.loans is a simple entry point for two conversations:
+          <strong>borrow</strong> a business-purpose bridge loan secured by residential real estate,
+          or <strong>invest</strong> in trust deed opportunities tied to real estate collateral.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn primary" href="#contact" data-intent="borrow">Borrow (Bridge Loan)</a>
+          <a class="btn" href="#contact" data-intent="invest">Invest (Trust Deeds)</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap">
+      <div class="grid">
+        <div class="card span-7" id="borrow">
+          <h2>Borrow</h2>
+          <p>
+            Business-purpose bridge loans secured by residential real estate (1–4 unit).
+            Tell us the property, request amount, timeline, and exit plan.
+          </p>
+          <div class="pillrow" aria-label="Borrowing highlights">
+            <span class="pill">Bridge Loans</span>
+            <span class="pill">Fast Close</span>
+            <span class="pill">1–4 Unit</span>
+            <span class="pill">Purchase / Refi</span>
+            <span class="pill">Business Purpose</span>
+          </div>
+          <div style="margin-top:16px; display:flex; gap:10px; flex-wrap:wrap;">
+            <a class="btn primary" href="#contact" data-intent="borrow">Contact to Borrow</a>
+            <a class="btn" href="#contact" data-intent="borrow">Start a Pricing Conversation</a>
+          </div>
+        </div>
+
+        <div class="card span-5" id="invest">
+          <h2>Invest</h2>
+          <p>
+            Trust deed investing tied to real estate collateral.
+            Share target yield, duration, and amount so we can match fit.
+          </p>
+          <div class="pillrow" aria-label="Investing highlights">
+            <span class="pill">Trust Deeds</span>
+            <span class="pill">Real Estate–Backed</span>
+            <span class="pill">Income-Focused</span>
+            <span class="pill">Short Duration</span>
+          </div>
+          <div style="margin-top:16px;">
+            <a class="btn primary" href="#contact" data-intent="invest">Contact to Invest</a>
+          </div>
+        </div>
+
+        <div class="card span-12">
+          <h2>Next step</h2>
+          <p>
+            Select <strong>Borrow</strong> or <strong>Invest</strong>, then submit the form.
+            We’ll reply with the specific items we need to proceed.
+          </p>
+        </div>
+      </div>
+
+      <section class="contact" id="contact" aria-label="Contact">
+        <div class="contact-head">
+          <div>
+            <h2>Contact MyBridge.Loans</h2>
+            <p>We route your message based on intent: bridge loan request or trust deed investing.</p>
+          </div>
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <a class="btn" href="#contact" data-intent="invest">I want to invest</a>
+            <a class="btn primary" href="#contact" data-intent="borrow">I want to borrow</a>
+          </div>
+        </div>
+
+        <form id="leadForm">
+          <div class="field">
+            <label for="intent">I’m contacting you to</label>
+            <select id="intent" name="intent" required>
+              <option value="Borrow (Bridge Loan)">Borrow (Bridge Loan)</option>
+              <option value="Invest (Trust Deeds)">Invest (Trust Deeds)</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" autocomplete="name" required />
+          </div>
+
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required />
+          </div>
+
+          <div class="field">
+            <label for="phone">Phone</label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="(###) ###-####" />
+          </div>
+
+          <div class="field full" id="borrowFields">
+            <label for="deal">Borrower details (property, amount, timeline, exit)</label>
+            <textarea id="deal" name="deal" placeholder="Example: Purchase in Orange County. $900k request on a 1–4 unit. 10-day close. Exit = refi in 6 months."></textarea>
+          </div>
+
+          <div class="field full" id="investFields" style="display:none;">
+            <label for="investPrefs">Investor preferences (target yield, duration, amount)</label>
+            <textarea id="investPrefs" name="investPrefs" placeholder="Example: Investing $250k–$500k, 6–12 months, income-focused."></textarea>
+          </div>
+
+          <div class="field full">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Add anything important you want us to know." required></textarea>
+          </div>
+
+          <div class="form-actions">
+            <button class="btn primary" type="submit">Send</button>
+            <div class="fineprint">
+              By submitting, you agree we may contact you about your inquiry.<br />
+              <strong>General disclosure:</strong> This website is for informational and contact purposes only and is not an offer to sell or a solicitation to buy securities.
+            </div>
+          </div>
+        </form>
+      </section>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="foot">
+        <div>© <span id="year"></span> MyBridge.Loans</div>
+        <div style="display:flex; gap:6px; flex-wrap:wrap;">
+          <a href="#borrow">Borrow</a>
+          <a href="#invest">Invest</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ===== LOGO CONFIG =====
+    // Put your logo next to index.html and set the filename here.
+    // Recommended: rename your logo to "logo.png" for simplicity.
+    const LOGO_SRC = "logo.png"; // <-- change if needed (e.g., "mybridge.loans bank like logo.jpeg")
+
+    const logoEl = document.getElementById("logo");
+    const brandText = document.getElementById("brandText");
+
+    // If logo fails to load, fall back to text.
+    logoEl.src = LOGO_SRC;
+    logoEl.onerror = () => {
+      logoEl.style.display = "none";
+      brandText.style.display = "block";
+    };
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const intentSelect = document.getElementById("intent");
+    const borrowFields = document.getElementById("borrowFields");
+    const investFields = document.getElementById("investFields");
+
+    function syncIntentUI() {
+      const v = intentSelect.value || "";
+      const isBorrow = v.toLowerCase().includes("borrow");
+      borrowFields.style.display = isBorrow ? "block" : "none";
+      investFields.style.display = isBorrow ? "none" : "block";
+    }
+    intentSelect.addEventListener("change", syncIntentUI);
+    syncIntentUI();
+
+    document.querySelectorAll("[data-intent]").forEach(el => {
+      el.addEventListener("click", () => {
+        const val = el.getAttribute("data-intent");
+        intentSelect.value = (val === "invest") ? "Invest (Trust Deeds)" : "Borrow (Bridge Loan)";
+        syncIntentUI();
+      });
+    });
+
+    // ===== Lead delivery =====
+    // Default: mailto fallback (no backend). Edit this email.
+    const EMAIL_TO = "info@mybridge.loans"; // <-- EDIT THIS
+    const form = document.getElementById("leadForm");
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const data = new FormData(form);
+      const subject = `[MyBridge.Loans] ${data.get("intent")} — ${data.get("name")}`;
+      const lines = [
+        `Intent: ${data.get("intent")}`,
+        `Name: ${data.get("name")}`,
+        `Email: ${data.get("email")}`,
+        `Phone: ${data.get("phone") || ""}`,
+        "",
+        "Borrower details:",
+        `${data.get("deal") || ""}`,
+        "",
+        "Investor preferences:",
+        `${data.get("investPrefs") || ""}`,
+        "",
+        "Message:",
+        `${data.get("message")}`,
+      ];
+
+      const body = encodeURIComponent(lines.join("\n"));
+      window.location.href =
+        `mailto:${encodeURIComponent(EMAIL_TO)}?subject=${encodeURIComponent(subject)}&body=${body}`;
+    });
+  </script>
+</body>
+</html>
