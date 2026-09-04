@@ -152,21 +152,33 @@
   if(rule){ const io = new IntersectionObserver(e=>{ if(e[0].isIntersecting){ rule.classList.add('drawn'); io.disconnect(); } },{threshold:.6}); io.observe(rule); }
 
   /* ---------- contact: assembled at runtime so scrapers don't get plain text ---------- */
-  (function contact(){
-    // Strings are reversed and split so the address and number never appear whole in the source.
-    const em = ['novej','@','snaol.egdirbym'].map(s=>s.split('').reverse().join('')).join('');
-    const ph = ['9898','364','949'].reverse().join('');
-    document.querySelectorAll('.contact-email').forEach(b=>b.addEventListener('click',()=>{
-      const subj = b.dataset.subject ? '?subject='+encodeURIComponent(b.dataset.subject) : '';
-      location.href = 'mailto:'+em+subj;
-    }));
-    document.querySelectorAll('.contact-phone').forEach(b=>b.addEventListener('click',()=>{ location.href='tel:+1'+ph; }));
-  })();
+  const EM = ['novej','@','snaol.egdirbym'].map(s=>s.split('').reverse().join('')).join('');
+  const PH = ['9898','364','949'].reverse().join('');
+  const PH_FMT = PH.slice(0,3)+'-'+PH.slice(3,6)+'-'+PH.slice(6);
+  function copyText(t, btn){
+    const done=()=>{ const o=btn.textContent; btn.textContent='Copied'; setTimeout(()=>btn.textContent=o,1600); };
+    if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(t).then(done,()=>{}); }
+    else { const ta=document.createElement('textarea'); ta.value=t; document.body.appendChild(ta); ta.select(); try{document.execCommand('copy');done();}catch(e){} ta.remove(); }
+  }
+  function reveal(btn, kind){
+    // replace the button with the real link + copy, and attempt the native handler
+    if(btn.dataset.revealed) return; btn.dataset.revealed='1';
+    const wrap=document.createElement('div'); wrap.className='reveal';
+    const a=document.createElement('a');
+    if(kind==='email'){ const subj = btn.dataset.subject ? '?subject='+encodeURIComponent(btn.dataset.subject) : ''; a.href='mailto:'+EM+subj; a.textContent=EM; }
+    else { a.href='tel:+1'+PH; a.textContent=PH_FMT; }
+    const c=document.createElement('button'); c.type='button'; c.className='copy'; c.textContent='Copy';
+    c.addEventListener('click',()=>copyText(kind==='email'?EM:PH_FMT,c));
+    wrap.appendChild(a); wrap.appendChild(c);
+    btn.replaceWith(wrap);
+    a.click();
+  }
+  document.querySelectorAll('.contact-email').forEach(b=>b.addEventListener('click',()=>reveal(b,'email')));
+  document.querySelectorAll('.contact-phone').forEach(b=>b.addEventListener('click',()=>reveal(b,'phone')));
 
   /* ---------- scenario form ---------- */
   const form = document.getElementById('scenario');
   if(form){
-    const TO = ['novej','@','snaol.egdirbym'].map(s=>s.split('').reverse().join('')).join('');
     form.addEventListener('submit', e=>{
       e.preventDefault();
       const email = form.email, err = document.getElementById('form-error');
@@ -178,7 +190,17 @@
       const labels = {email:'Broker email',address:'Address',value:'As-is value',owed:'Amount owed',loan:'Loan amount',fico:'FICO',occupancy:'Occupancy',position:'Lien position',purpose:'Business purpose',history:'1st mortgage payment history',cross:'Cross-collateral',exit:'Exit'};
       for(const [k,v] of fd.entries()) if(v) lines.push(`${labels[k]||k}: ${v}`);
       const subject = 'Scenario: ' + (fd.get('address') || 'new request');
-      location.href = `mailto:${TO}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines.join('\n'))}`;
+      const body = lines.join('\n');
+      // show the composed message so it works even when the browser has no mail app
+      let out = document.getElementById('form-out');
+      if(!out){ out=document.createElement('div'); out.id='form-out'; out.className='form-out'; form.appendChild(out); }
+      out.innerHTML = '';
+      const p=document.createElement('p'); p.innerHTML='Send this to <a href="mailto:'+EM+'?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body)+'">'+EM+'</a>. If your mail app did not open, copy it and paste into any email.'; out.appendChild(p);
+      const pre=document.createElement('pre'); pre.textContent='Subject: '+subject+'\n\n'+body; out.appendChild(pre);
+      const c=document.createElement('button'); c.type='button'; c.className='btn ghost copy'; c.textContent='Copy scenario';
+      c.addEventListener('click',()=>copyText('To: '+EM+'\nSubject: '+subject+'\n\n'+body,c)); out.appendChild(c);
+      out.scrollIntoView({behavior:'smooth',block:'nearest'});
+      location.href = `mailto:${EM}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     });
   }
 })();

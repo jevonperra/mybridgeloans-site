@@ -173,3 +173,14 @@ footer{background:var(--ink);color:var(--fog);padding:48px 0 56px;font-size:13px
   .state-list{grid-template-columns:1fr 1fr}
   .hero-copy{bottom:28%}
 }
+
+/* revealed contact + form fallback */
+.reveal{display:inline-flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:16px}
+.reveal a{color:var(--brass-l);font-weight:500;text-decoration:underline}
+.consumer .reveal a{color:var(--brass)}
+.reveal .copy,.form-out .copy{font:inherit;font-size:13px;padding:6px 10px;border:1px solid currentColor;background:transparent;color:inherit;border-radius:3px;cursor:pointer;width:auto}
+.form-out{margin-top:22px;padding:18px;border:1px solid #B9C5D1;border-radius:4px;background:#fff}
+.form-out p{margin:0 0 10px;font-size:15px}
+.form-out a{color:var(--brass);font-weight:500}
+.form-out pre{white-space:pre-wrap;font:14px/1.5 var(--text);color:var(--ink);background:var(--paper);padding:12px;border-radius:3px;margin:0 0 12px}
+.form-out .btn.ghost.copy{color:var(--ink);padding:10px 14px;font-size:14px}
