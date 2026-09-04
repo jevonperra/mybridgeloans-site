@@ -137,7 +137,7 @@
     });
   }
 
-  /* ---------- card tilt, max 6° ---------- */
+  /* ---------- card tilt, max 6Â° ---------- */
   if(finePointer && !reduced){
     document.querySelectorAll('.tilt').forEach(card=>{
       card.addEventListener('pointermove',e=>{ const r=card.getBoundingClientRect();
@@ -151,7 +151,7 @@
   const rule = document.getElementById('rule');
   if(rule){ const io = new IntersectionObserver(e=>{ if(e[0].isIntersecting){ rule.classList.add('drawn'); io.disconnect(); } },{threshold:.6}); io.observe(rule); }
 
-  /* ---------- contact: assembled at runtime so scrapers don't get plain text ---------- */
+  /* ---------- contact: assembled at runtime so the address and number never appear in the HTML source ---------- */
   const EM = ['novej','@','snaol.egdirbym'].map(s=>s.split('').reverse().join('')).join('');
   const PH = ['9898','364','949'].reverse().join('');
   const PH_FMT = PH.slice(0,3)+'-'+PH.slice(3,6)+'-'+PH.slice(6);
@@ -160,47 +160,59 @@
     if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(t).then(done,()=>{}); }
     else { const ta=document.createElement('textarea'); ta.value=t; document.body.appendChild(ta); ta.select(); try{document.execCommand('copy');done();}catch(e){} ta.remove(); }
   }
-  function reveal(btn, kind){
-    // replace the button with the real link + copy, and attempt the native handler
-    if(btn.dataset.revealed) return; btn.dataset.revealed='1';
-    const wrap=document.createElement('div'); wrap.className='reveal';
-    const a=document.createElement('a');
-    if(kind==='email'){ const subj = btn.dataset.subject ? '?subject='+encodeURIComponent(btn.dataset.subject) : ''; a.href='mailto:'+EM+subj; a.textContent=EM; }
-    else { a.href='tel:+1'+PH; a.textContent=PH_FMT; }
+  function row(label, text, href, copyVal){
+    const d=document.createElement('div'); d.className='contact-row';
+    const l=document.createElement('span'); l.className='contact-label'; l.textContent=label;
+    const a=document.createElement('a'); a.href=href; a.textContent=text;
     const c=document.createElement('button'); c.type='button'; c.className='copy'; c.textContent='Copy';
-    c.addEventListener('click',()=>copyText(kind==='email'?EM:PH_FMT,c));
-    wrap.appendChild(a); wrap.appendChild(c);
-    btn.replaceWith(wrap);
-    a.click();
+    c.addEventListener('click',()=>copyText(copyVal,c));
+    d.appendChild(l); d.appendChild(a); d.appendChild(c); return d;
   }
-  document.querySelectorAll('.contact-email').forEach(b=>b.addEventListener('click',()=>reveal(b,'email')));
-  document.querySelectorAll('.contact-phone').forEach(b=>b.addEventListener('click',()=>reveal(b,'phone')));
+  document.querySelectorAll('[data-contact]').forEach(box=>{
+    box.appendChild(row('Email', EM, 'mailto:'+EM, EM));
+    box.appendChild(row('Phone', PH_FMT, 'tel:+1'+PH, PH_FMT));
+  });
 
   /* ---------- scenario form ---------- */
+  // Form delivery. Get a free access key at web3forms.com (they email it to you), paste it here.
+  const FORM_KEY = 'REPLACE_WITH_WEB3FORMS_KEY';
   const form = document.getElementById('scenario');
   if(form){
-    form.addEventListener('submit', e=>{
+    const labels = {email:'Broker email',address:'Address',value:'As-is value',owed:'Amount owed',loan:'Loan amount',fico:'FICO',occupancy:'Occupancy',position:'Lien position',purpose:'Business purpose',history:'1st mortgage payment history',cross:'Cross-collateral',exit:'Exit'};
+    const btn = form.querySelector('button[type="submit"]');
+    function outBox(){ let out=document.getElementById('form-out'); if(!out){ out=document.createElement('div'); out.id='form-out'; out.className='form-out'; form.appendChild(out); } out.innerHTML=''; return out; }
+    function showFallback(subject, body){
+      const out=outBox();
+      const p=document.createElement('p'); p.textContent='We could not send this automatically. Copy it and email it to '+EM+'.'; out.appendChild(p);
+      const pre=document.createElement('pre'); pre.textContent='Subject: '+subject+'\n\n'+body; out.appendChild(pre);
+      const c=document.createElement('button'); c.type='button'; c.className='btn ghost copy'; c.textContent='Copy scenario';
+      c.addEventListener('click',()=>copyText('To: '+EM+'\nSubject: '+subject+'\n\n'+body,c)); out.appendChild(c);
+      out.scrollIntoView({behavior:'smooth',block:'nearest'});
+    }
+    form.addEventListener('submit', async e=>{
       e.preventDefault();
       const email = form.email, err = document.getElementById('form-error');
       if(!email.value || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)){
         err.textContent = 'Enter the email you want the answer sent to.'; email.setAttribute('aria-invalid','true'); email.focus(); return;
       }
       email.removeAttribute('aria-invalid'); err.textContent='';
+      if(form.botcheck && form.botcheck.value) return; // honeypot
       const fd = new FormData(form); const lines = [];
-      const labels = {email:'Broker email',address:'Address',value:'As-is value',owed:'Amount owed',loan:'Loan amount',fico:'FICO',occupancy:'Occupancy',position:'Lien position',purpose:'Business purpose',history:'1st mortgage payment history',cross:'Cross-collateral',exit:'Exit'};
-      for(const [k,v] of fd.entries()) if(v) lines.push(`${labels[k]||k}: ${v}`);
+      for(const [k,v] of fd.entries()) if(v && k!=='botcheck') lines.push(`${labels[k]||k}: ${v}`);
       const subject = 'Scenario: ' + (fd.get('address') || 'new request');
       const body = lines.join('\n');
-      // show the composed message so it works even when the browser has no mail app
-      let out = document.getElementById('form-out');
-      if(!out){ out=document.createElement('div'); out.id='form-out'; out.className='form-out'; form.appendChild(out); }
-      out.innerHTML = '';
-      const p=document.createElement('p'); p.innerHTML='Send this to <a href="mailto:'+EM+'?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body)+'">'+EM+'</a>. If your mail app did not open, copy it and paste into any email.'; out.appendChild(p);
-      const pre=document.createElement('pre'); pre.textContent='Subject: '+subject+'\n\n'+body; out.appendChild(pre);
-      const c=document.createElement('button'); c.type='button'; c.className='btn ghost copy'; c.textContent='Copy scenario';
-      c.addEventListener('click',()=>copyText('To: '+EM+'\nSubject: '+subject+'\n\n'+body,c)); out.appendChild(c);
-      out.scrollIntoView({behavior:'smooth',block:'nearest'});
-      location.href = `mailto:${EM}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      if(FORM_KEY==='REPLACE_WITH_WEB3FORMS_KEY'){ showFallback(subject, body); return; }
+      btn.disabled=true; const orig=btn.textContent; btn.textContent='Sending';
+      try{
+        const payload = {access_key: FORM_KEY, subject: subject, from_name: 'MyBridge.Loans site', replyto: email.value, message: body};
+        for(const [k,v] of fd.entries()) if(k!=='botcheck') payload[k]=v;
+        const r = await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(payload)});
+        const data = await r.json();
+        if(!r.ok || !data.success) throw new Error(data.message||'send failed');
+        const out=outBox(); const p=document.createElement('p'); p.className='ok'; p.textContent='Sent. We will reply to '+email.value+'.'; out.appendChild(p);
+        form.reset(); out.scrollIntoView({behavior:'smooth',block:'nearest'});
+      }catch(ex){ showFallback(subject, body); }
+      finally{ btn.disabled=false; btn.textContent=orig; }
     });
   }
 })();
