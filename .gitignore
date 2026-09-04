@@ -1,0 +1,5 @@
+﻿node_modules/
+.next/
+mybridge-site/
+next-env.d.ts
+.next
