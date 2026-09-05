@@ -190,3 +190,20 @@ footer{background:var(--ink);color:var(--fog);padding:48px 0 56px;font-size:13px
 .form-out p.ok{margin:0;color:var(--brass);font-weight:500}
 .form-out pre{white-space:pre-wrap;font:14px/1.5 var(--text);color:var(--ink);background:var(--paper);padding:12px;border-radius:3px;margin:0 0 12px}
 .form-out .btn.ghost.copy{color:var(--ink);padding:10px 14px;font-size:14px}
+
+/* ---- short viewport (phone landscape): keep logo, nav, and headline from overlapping ---- */
+@media(max-height:560px) and (min-width:641px){
+  .top{padding:10px clamp(20px,4vw,48px)}
+  .brand img{width:132px}
+  .hero{min-height:520px}
+  .hero-copy{top:auto;bottom:14%;transform:none;max-width:60%}
+  .hero-copy h1{font-size:clamp(30px,6vw,52px);margin-bottom:12px}
+  .hero-copy p{font-size:15px;margin-bottom:18px}
+  .top nav a:nth-child(1),.top nav a:nth-child(2){display:none}
+}
+@media(max-height:430px) and (min-width:641px){
+  .brand img{width:112px}
+  .hero-copy h1{font-size:clamp(26px,5vw,40px)}
+  .hero-copy p{margin-bottom:12px}
+  .hero-copy .btn{padding:10px 16px}
+}
