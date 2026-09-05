@@ -153,7 +153,7 @@
 
   /* ---------- contact: assembled at runtime so the address and number never appear in the HTML source ---------- */
   const EM = ['novej','@','snaol.egdirbym'].map(s=>s.split('').reverse().join('')).join('');
-  const PH = ['9898','364','949'].reverse().join('');
+  const PH = ['9898','463','949'].reverse().join('');
   const PH_FMT = PH.slice(0,3)+'-'+PH.slice(3,6)+'-'+PH.slice(6);
   function copyText(t, btn){
     const done=()=>{ const o=btn.textContent; btn.textContent='Copied'; setTimeout(()=>btn.textContent=o,1600); };
