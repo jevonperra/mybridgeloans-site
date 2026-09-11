@@ -8,12 +8,16 @@
 - Licenses: California DRE #01716773 · Company NMLS #2869596 · Jevon Perra (broker) NMLS #1006038
 - Contact: 949-463-9898 · jevon@mybridge.loans · https://mybridge.loans/#submit
 - Loan types: 1st trust deed bridge, 2nd trust deed, commercial bridge, owner-occupied business-purpose hard money
-- Not offered: construction / ground-up loans, 2nd trust deeds in Texas
-- Typical LTV: up to 75% purchase / 70% refinance on 1st trust deeds in Southern California; up to 65% CLTV on 2nd trust deeds in Southern California; roughly 5% lower outside Southern California
-- Pricing: interest-only; priced on lien position, LTV, property, and exit, not on income
-- Speed: answer the same day a scenario is received
-- Credit: asset-based; low FICO is not an automatic decline when equity and exit are strong
-- Funding source: direct private investors (no bank committee); loans can be brokered to other capital when a scenario falls outside our box
+- Max LTV: 65% on 1st or 2nd trust deeds; commercial up to 60% (mostly California); cross-collateralize additional property to increase the loan, even past 100% of the subject property's value
+- Rates: 1st trust deeds 9.5% to 10.99%+; 2nd trust deeds 11.99% to 12.99%+; interest-only payments
+- Points and term: usually 1.5 to 2 lender points plus broker; 3-year note; 3 to 6 month prepayment penalty; exceptions available
+- Loan size: $100,000 to $4,000,000+; minimum origination $4,000
+- Fees: underwriting $1,995; no processing fee; doc prep none in California, $495 outside California; third-party appraisal (commonly around $700); up to 30 days prepaid interest; credit report, title, escrow, flood and other reports at cost
+- Speed: same-day answer on any scenario; typical funding in two weeks
+- Credit and income: no minimum FICO; no income documentation; no seasoning; no employment verification; derogatories OK if the property works
+- Foreign nationals and ITIN: OK with a tax ID or entity EIN and a U.S. bank account, at about 5% less leverage
+- Also fine: cash out on a completed property, including one listed for sale; probate loans with court approval; irrevocable trusts usually
+- Not offered: construction / ground-up loans; 2nd trust deeds in Texas- Funding source: direct private investors (no bank committee); loans can be brokered to other capital when a scenario falls outside our box
 - Who we work with: borrowers, real estate investors, mortgage brokers and loan officers (referral partners are protected on every file), attorneys with clients needing estate, divorce, or tax-lien liquidity
 - Consumer mortgages (California only): conventional, FHA, VA, non-QM
 
