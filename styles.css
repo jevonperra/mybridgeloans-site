@@ -232,3 +232,9 @@ footer{background:var(--ink);color:var(--fog);padding:48px 0 56px;font-size:13px
   .faq h3{font-size:21px}
   .article{padding:110px 0 56px}
 }
+
+/* guides */
+.guides{background:#fff;border-top:1px solid #DCE4EC}
+.guide-list{list-style:none;margin:0;padding:0;display:grid;gap:12px;font-size:18px}
+.guide-list a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--brass-l)}
+.guide-list a:hover{color:var(--brass)}

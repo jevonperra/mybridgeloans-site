@@ -25,11 +25,17 @@
 Alabama, Arizona, California, Colorado, Connecticut, Florida, Georgia, Hawaii, Illinois, Kansas, Kentucky, Massachusetts, Missouri, Montana, New Jersey, New Mexico, Nevada, North Carolina, Ohio, Oklahoma, Pennsylvania, South Carolina, Tennessee, Texas (no 2nds), Washington, West Virginia
 
 ## Pages
-- [Home](https://mybridge.loans/): loan programs, process, states, FAQ, scenario form
-- [Hard money 2nd trust deed in Orange County](https://mybridge.loans/hard-money-2nd-trust-deed-orange-county.html): how 65% CLTV works, what we need, common uses
+- [Home](https://mybridge.loans/): loan programs, terms, fees, FAQ, states, scenario form
+- [Hard money 2nd trust deed in Orange County](https://mybridge.loans/hard-money-2nd-trust-deed-orange-county.html): 65% CLTV behind a current first, funded examples
+- [Cash-out loan on a rental property](https://mybridge.loans/cash-out-loan-rental-property.html): 65% LTV, no income docs, listed-for-sale OK
+- [Probate and inherited property loans](https://mybridge.loans/probate-inherited-property-loan.html): loans to estates, heirs, and trusts; court approval
+- [Owner-occupied business purpose hard money](https://mybridge.loans/owner-occupied-business-purpose-hard-money.html): what qualifies as business purpose
+- [Tax lien payoff loan](https://mybridge.loans/tax-lien-payoff-loan.html): IRS, FTB, county liens paid through escrow
+- [Cross-collateral bridge loan for a purchase](https://mybridge.loans/cross-collateral-purchase-loan.html): buy with little or no cash down using equity elsewhere
+- [Foreign national and ITIN loans](https://mybridge.loans/foreign-national-hard-money-loan.html): no U.S. credit, ITIN or entity EIN, about 5% less leverage
+- [Mortgage declined? Bridge loan alternative](https://mybridge.loans/mortgage-declined-bridge-loan.html): for loan officers and borrowers after a bank decline
 - [Submit a scenario](https://mybridge.loans/#submit): send an address, value, loan amount, FICO, occupancy, lien position, purpose, and exit
 - [Home loans in California](https://mybridge.loans/#consumer)
-
 ## Common questions we answer
 - Hard money 2nd trust deed in Orange County / Los Angeles
 - Bridge loan to buy a house before selling the current one in California
