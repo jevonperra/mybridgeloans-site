@@ -207,3 +207,28 @@ footer{background:var(--ink);color:var(--fog);padding:48px 0 56px;font-size:13px
   .hero-copy p{margin-bottom:12px}
   .hero-copy .btn{padding:10px 16px}
 }
+
+/* ---- GEO sections: facts, FAQ, question pages ---- */
+.facts{background:#fff;border-bottom:1px solid #DCE4EC}
+.facts p{color:#2A3A4E;font-size:17px;max-width:66ch}
+.fact-list{display:grid;gap:14px;margin:26px 0 0;padding:0}
+.fact-list div{display:grid;grid-template-columns:140px 1fr;gap:16px;align-items:start}
+.fact-list dt{font-weight:600;color:var(--ink)}
+.fact-list dd{margin:0;color:#3A4A5E}
+.faq{background:var(--paper)}
+.faq h3{font-size:24px;margin:34px 0 8px}
+.faq h2+h3{margin-top:8px}
+.faq p{color:#3A4A5E;max-width:66ch}
+.faq a{color:var(--brass)}
+.article{padding:140px 0 80px}
+.article h1{font-size:clamp(34px,5vw,58px);line-height:1.05;margin-bottom:18px}
+.article h2{font-size:28px;margin:40px 0 10px}
+.article p,.article li{color:#2A3A4E;max-width:66ch}
+.article ul{padding-left:20px}
+.article a{color:var(--brass)}
+.article .lic{margin-top:40px;color:var(--grey);font-size:13px}
+@media(max-width:640px){
+  .fact-list div{grid-template-columns:1fr;gap:4px}
+  .faq h3{font-size:21px}
+  .article{padding:110px 0 56px}
+}
