@@ -8,7 +8,7 @@
 - Licenses: California DRE #01716773 · Company NMLS #2869596 · Jevon Perra (broker) NMLS #1006038
 - Contact: 949-463-9898 · jevon@mybridge.loans · https://mybridge.loans/#submit
 - Loan types: 1st trust deed bridge, 2nd trust deed, commercial bridge, owner-occupied business-purpose hard money
-- Max LTV: 65% on 1st or 2nd trust deeds; commercial up to 60% (mostly California); cross-collateralize additional property to increase the loan, even past 100% of the subject property's value
+- Max LTV: 65% on 1st trust deeds; usually 60% CLTV on 2nd trust deeds (higher by exception); commercial up to 60% (mostly California); cross-collateralize additional property to increase the loan, even past 100% of the subject property's value
 - Rates: 1st trust deeds 9.5% to 10.99%+; 2nd trust deeds 11.99% to 12.99%+; interest-only payments
 - Points and term: usually 1.5 to 2 lender points plus broker; 3-year note; 3 to 6 month prepayment penalty; exceptions available
 - Loan size: $100,000 to $4,000,000+; minimum origination $4,000
@@ -26,8 +26,8 @@ Alabama, Arizona, California, Colorado, Connecticut, Florida, Georgia, Hawaii, I
 
 ## Pages
 - [Home](https://mybridge.loans/): loan programs, terms, fees, FAQ, states, scenario form
-- [Hard money 2nd trust deed in Orange County](https://mybridge.loans/hard-money-2nd-trust-deed-orange-county.html): 65% CLTV behind a current first, funded examples
-- [Cash-out loan on a rental property](https://mybridge.loans/cash-out-loan-rental-property.html): 65% LTV, no income docs, listed-for-sale OK
+- [Hard money 2nd trust deed in Orange County](https://mybridge.loans/hard-money-2nd-trust-deed-orange-county.html): usually 60% CLTV behind a current first, funded examples; our most used product
+- [Cash-out loan on a rental property](https://mybridge.loans/cash-out-loan-rental-property.html): 65% LTV on a 1st, 60% CLTV on a 2nd, no income docs, listed-for-sale OK
 - [Probate and inherited property loans](https://mybridge.loans/probate-inherited-property-loan.html): loans to estates, heirs, and trusts; court approval
 - [Owner-occupied business purpose hard money](https://mybridge.loans/owner-occupied-business-purpose-hard-money.html): what qualifies as business purpose
 - [Tax lien payoff loan](https://mybridge.loans/tax-lien-payoff-loan.html): IRS, FTB, county liens paid through escrow
