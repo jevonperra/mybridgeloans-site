@@ -170,7 +170,6 @@
   }
   document.querySelectorAll('[data-contact]').forEach(box=>{
     box.appendChild(row('Email', EM, 'mailto:'+EM, EM));
-    box.appendChild(row('Phone', PH_FMT, 'tel:+1'+PH, PH_FMT));
   });
 
   /* ---------- scenario form ---------- */
