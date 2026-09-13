@@ -242,3 +242,20 @@ footer{background:var(--ink);color:var(--fog);padding:48px 0 56px;font-size:13px
 .phone-line{margin:0 0 10px;font-size:18px;color:var(--fog)}
 .phone-line a{color:var(--paper);font-weight:500;text-decoration:none}
 .phone-line a:hover{text-decoration:underline}
+
+/* sticky mobile CTA */
+.sticky-cta{display:none}
+@media(max-width:640px){
+  .sticky-cta{display:block;position:fixed;left:12px;right:12px;bottom:12px;z-index:40;background:var(--brass);color:#fff;text-align:center;font-weight:500;padding:14px;border-radius:4px;text-decoration:none;box-shadow:0 6px 20px rgba(15,34,51,.25)}
+  body{padding-bottom:72px}
+  .hero .sticky-cta{display:none}
+}
+.lic a{color:var(--fog)}
+/* analytics consent bar */
+.consent{position:fixed;left:12px;right:12px;bottom:12px;z-index:50;background:var(--ink);color:var(--paper);padding:14px 16px;border-radius:4px;display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap;font-size:14px;box-shadow:0 8px 24px rgba(15,34,51,.3)}
+.consent p{margin:0}
+.consent a{color:var(--brass-l)}
+.consent div{display:flex;gap:8px}
+.consent button{font:inherit;font-size:14px;padding:8px 14px;border-radius:3px;cursor:pointer;border:1px solid var(--fog);background:transparent;color:var(--paper)}
+.consent #consent-yes{background:var(--brass);border-color:var(--brass);color:#fff}
+@media(max-width:640px){.consent{bottom:80px}}

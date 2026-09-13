@@ -208,10 +208,21 @@
         const r = await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(payload)});
         const data = await r.json();
         if(!r.ok || !data.success) throw new Error(data.message||'send failed');
-        const out=outBox(); const p=document.createElement('p'); p.className='ok'; p.textContent='Sent. We will reply to '+email.value+'.'; out.appendChild(p);
-        form.reset(); out.scrollIntoView({behavior:'smooth',block:'nearest'});
+        form.reset(); location.href='/thanks.html';
       }catch(ex){ showFallback(subject, body); }
       finally{ btn.disabled=false; btn.textContent=orig; }
     });
   }
+
+  /* ---------- analytics consent ---------- */
+  (function(){
+    const box=document.getElementById('consent'); if(!box) return;
+    let choice=null; try{ choice=localStorage.getItem('ga-consent'); }catch(e){}
+    function grant(){ if(window.gtag) gtag('consent','update',{analytics_storage:'granted'}); }
+    if(choice==='yes'){ grant(); return; }
+    if(choice==='no'){ return; }
+    box.hidden=false;
+    document.getElementById('consent-yes').addEventListener('click',()=>{ try{localStorage.setItem('ga-consent','yes');}catch(e){} grant(); box.hidden=true; });
+    document.getElementById('consent-no').addEventListener('click',()=>{ try{localStorage.setItem('ga-consent','no');}catch(e){} box.hidden=true; });
+  })();
 })();
