@@ -259,3 +259,14 @@ footer{background:var(--ink);color:var(--fog);padding:48px 0 56px;font-size:13px
 .consent button{font:inherit;font-size:14px;padding:8px 14px;border-radius:3px;cursor:pointer;border:1px solid var(--fog);background:transparent;color:var(--paper)}
 .consent #consent-yes{background:var(--brass);border-color:var(--brass);color:#fff}
 @media(max-width:640px){.consent{bottom:80px}}
+/* about page */
+.person{display:grid;grid-template-columns:220px 1fr;gap:32px;align-items:start;margin:8px 0 8px}
+.person img{width:220px;height:auto;display:block}
+.person h2{margin-top:0}
+.about ol{padding-left:22px}
+.about ol li{margin-bottom:12px;color:#2A3A4E;max-width:66ch}
+.about .fact-list dt{min-width:0}
+@media(max-width:640px){
+  .person{grid-template-columns:1fr;gap:12px}
+  .person img{width:180px}
+}
