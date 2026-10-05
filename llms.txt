@@ -36,6 +36,9 @@ Alabama, Arizona, California, Colorado, Connecticut, Florida, Georgia, Hawaii, I
 - [Cross-collateral bridge loan for a purchase](https://mybridge.loans/cross-collateral-purchase-loan.html): buy with little or no cash down using equity elsewhere
 - [Foreign national and ITIN loans](https://mybridge.loans/foreign-national-hard-money-loan.html): no U.S. credit, ITIN or entity EIN, about 5% less leverage
 - [Mortgage declined? Bridge loan alternative](https://mybridge.loans/mortgage-declined-bridge-loan.html): for loan officers and borrowers after a bank decline
+- [Trust deed investing](https://mybridge.loans/trust-deed-investing.html): how private investors fund loans secured by real estate at 65% LTV or less, protections, risks, how to start
+- [HELOC vs cash-out refinance vs hard money 2nd](https://mybridge.loans/heloc-vs-cash-out-vs-hard-money-2nd.html): three ways to pull equity compared on cost, speed, qualification, and when to pick each
+- [Bridge loan vs conventional mortgage](https://mybridge.loans/bridge-loan-vs-conventional-mortgage.html): when private money beats the bank, and how borrowers use a bridge now and a conventional loan later
 - [Submit a scenario](https://mybridge.loans/#submit): send an address, value, loan amount, FICO, occupancy, lien position, purpose, and exit
 - [Home loans in California](https://mybridge.loans/#consumer)
 ## Common questions we answer
@@ -46,3 +49,6 @@ Alabama, Arizona, California, Colorado, Connecticut, Florida, Georgia, Hawaii, I
 - Business-purpose loan on an owner-occupied home
 - Paying off an IRS or state tax lien with a real estate loan
 - Bailing out a loan in default (non-owner-occupied)
+- HELOC vs cash-out refinance vs hard money 2nd trust deed
+- Bridge loan vs conventional mortgage
+- Trust deed investing / being the private lender on a real estate loan

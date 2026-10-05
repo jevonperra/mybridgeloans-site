@@ -270,3 +270,13 @@ footer{background:var(--ink);color:var(--fog);padding:48px 0 56px;font-size:13px
   .person{grid-template-columns:1fr;gap:12px}
   .person img{width:180px}
 }
+/* comparison tables */
+.compare{width:100%;border-collapse:collapse;margin:8px 0 24px;font-size:15px}
+.compare th,.compare td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px solid #DCE4EC}
+.compare thead th{font-weight:600;color:var(--ink);border-bottom:2px solid var(--brass)}
+.compare tbody th{font-weight:500;color:var(--ink);width:26%;background:#F7F9FB}
+.compare td{color:#2A3A4E}
+@media(max-width:640px){
+  .compare{display:block;overflow-x:auto;font-size:14px}
+  .compare th,.compare td{min-width:150px}
+}
