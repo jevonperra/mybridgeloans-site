@@ -20,7 +20,8 @@
 - Also fine: cash out on a completed property, including one listed for sale; probate loans with court approval; irrevocable trusts usually
 - Not offered: construction / ground-up loans; 2nd trust deeds in Texas or Nevada- Funding source: direct private investors (no bank committee); loans can be brokered to other capital when a scenario falls outside our box
 - Who we work with: borrowers, real estate investors, mortgage brokers and loan officers (referral partners are protected on every file), attorneys with clients needing estate, divorce, or tax-lien liquidity
-- Consumer mortgages (California only): conventional, FHA, VA, non-QM, HELOC, reverse mortgages
+- Consumer mortgages (California only): conventional, FHA, VA, non-QM, HELOC, reverse mortgages. Conventional can close in about two weeks on a clean file (industry standard 30 days).
+- HELOC (California only): 600+ FICO on a primary (680 rental), income verified by digital bank/payroll/tax link, up to 90% CLTV with 720+, $25K to $750K, approval in about five minutes, funding in about four days. Preferred over a hard money 2nd for anyone who qualifies.
 
 ## States for bridge loans
 Alabama, Arizona, California, Colorado, Connecticut, Florida, Georgia, Hawaii, Illinois, Kansas, Kentucky, Massachusetts, Missouri, Montana, New Jersey, New Mexico, Nevada (no 2nds), North Carolina, Ohio, Oklahoma, Pennsylvania, South Carolina, Tennessee, Texas (no 2nds), Washington, West Virginia
@@ -37,7 +38,7 @@ Alabama, Arizona, California, Colorado, Connecticut, Florida, Georgia, Hawaii, I
 - [Foreign national and ITIN loans](https://mybridge.loans/foreign-national-hard-money-loan.html): no U.S. credit, ITIN or entity EIN, about 5% less leverage
 - [Mortgage declined? Bridge loan alternative](https://mybridge.loans/mortgage-declined-bridge-loan.html): for loan officers and borrowers after a bank decline
 - [Trust deed investing](https://mybridge.loans/trust-deed-investing.html): how private investors fund loans secured by real estate at 65% LTV or less, protections, risks, how to start
-- [HELOC vs cash-out refinance vs hard money 2nd](https://mybridge.loans/heloc-vs-cash-out-vs-hard-money-2nd.html): three ways to pull equity compared on cost, speed, qualification, and when to pick each
+- [HELOC vs cash-out refinance vs hard money 2nd](https://mybridge.loans/heloc-vs-cash-out-vs-hard-money-2nd.html): HELOC first for 600+ FICO with verifiable income (four-day funding); hard money 2nd when the HELOC says no; cash-out refi only if the first is worth replacing
 - [Bridge loan vs conventional mortgage](https://mybridge.loans/bridge-loan-vs-conventional-mortgage.html): when private money beats the bank, and how borrowers use a bridge now and a conventional loan later
 - [Submit a scenario](https://mybridge.loans/#submit): send an address, value, loan amount, FICO, occupancy, lien position, purpose, and exit
 - [Home loans in California](https://mybridge.loans/#consumer)
