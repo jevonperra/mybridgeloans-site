@@ -177,7 +177,7 @@
   const FORM_KEY = 'd84dac91-1fc5-4ddb-becc-5c79cb5de964';
   const form = document.getElementById('scenario');
   if(form){
-    const labels = {email:'Broker email',address:'Address',value:'As-is value',owed:'Amount owed',loan:'Loan amount',fico:'FICO',occupancy:'Occupancy',position:'Lien position',purpose:'Business purpose',history:'1st mortgage payment history',cross:'Cross-collateral',exit:'Exit'};
+    const labels = {email:'Email',address:'Property address',street:'Street',city:'City',state:'State',value:'As-is value',owed:'Amount owed',loan:'Loan amount',fico:'FICO',occupancy:'Occupancy',position:'Lien position',purpose:'Business purpose',history:'1st mortgage payment history',cross:'Cross-collateral',exit:'Exit'};
     const btn = form.querySelector('button[type="submit"]');
     function outBox(){ let out=document.getElementById('form-out'); if(!out){ out=document.createElement('div'); out.id='form-out'; out.className='form-out'; form.appendChild(out); } out.innerHTML=''; return out; }
     function showFallback(subject, body){
@@ -195,16 +195,23 @@
         err.textContent = 'Enter the email you want the answer sent to.'; email.setAttribute('aria-invalid','true'); email.focus(); return;
       }
       email.removeAttribute('aria-invalid'); err.textContent='';
+      const street=form.street, city=form.city, state=form.state;
+      for(const f of [street,city,state]){
+        if(!f.value.trim()){ err.textContent='Enter the property street address, city and state.'; f.setAttribute('aria-invalid','true'); f.focus(); return; }
+        f.removeAttribute('aria-invalid');
+      }
       if(form.botcheck && form.botcheck.value) return; // honeypot
-      const fd = new FormData(form); const lines = [];
-      for(const [k,v] of fd.entries()) if(v && k!=='botcheck') lines.push(`${labels[k]||k}: ${v}`);
-      const subject = 'Scenario: ' + (fd.get('address') || 'new request');
+      const fullAddress = `${street.value.trim()}, ${city.value.trim()}, ${state.value}`;
+      const fd = new FormData(form); const lines = ['Property address: '+fullAddress];
+      for(const [k,v] of fd.entries()) if(v && k!=='botcheck' && k!=='street' && k!=='city' && k!=='state') lines.push(`${labels[k]||k}: ${v}`);
+      const subject = 'Scenario: ' + fullAddress;
       const body = lines.join('\n');
       if(FORM_KEY==='REPLACE_WITH_WEB3FORMS_KEY'){ showFallback(subject, body); return; }
       btn.disabled=true; const orig=btn.textContent; btn.textContent='Sending';
       try{
         const payload = {access_key: FORM_KEY, subject: subject, from_name: 'MyBridge.Loans site', replyto: email.value, message: body};
         for(const [k,v] of fd.entries()) if(k!=='botcheck') payload[k]=v;
+        payload.address = fullAddress;
         const r = await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(payload)});
         const data = await r.json();
         if(!r.ok || !data.success) throw new Error(data.message||'send failed');

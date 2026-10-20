@@ -216,11 +216,16 @@
 <section class="submit" id="submit">
   <div class="wrap narrow">
     <h2>Submit a scenario</h2>
-    <p class="lede">Your email is the only required field. Send what you have. We will tell you what we still need.</p>
+    <p class="lede">Email and the property address, city and state are required. Send whatever else you have. We will tell you what we still need.</p>
     <form id="scenario" novalidate>
       <input type="text" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
       <div class="field"><label for="email">Your email</label><input id="email" name="email" type="email" required autocomplete="email"></div>
-      <div class="field"><label for="address">Full property address</label><input id="address" name="address" type="text" autocomplete="street-address"></div>
+      <div class="field"><label for="street">Property street address</label><input id="street" name="street" type="text" required autocomplete="street-address" placeholder="123 Main St"></div>
+      <div class="grid2">
+        <div class="field"><label for="city">City</label><input id="city" name="city" type="text" required autocomplete="address-level2"></div>
+        <div class="field"><label for="state">State</label>
+          <select id="state" name="state" required autocomplete="address-level1"><option value="">Choose one</option><option>AL</option><option>AZ</option><option>CA</option><option>CO</option><option>CT</option><option>FL</option><option>GA</option><option>HI</option><option>IL</option><option>KS</option><option>KY</option><option>MA</option><option>MO</option><option>MT</option><option>NJ</option><option>NM</option><option>NV</option><option>NC</option><option>OH</option><option>OK</option><option>PA</option><option>SC</option><option>TN</option><option>TX</option><option>WA</option><option>WV</option><option>Other state</option></select></div>
+      </div>
       <div class="grid2">
         <div class="field"><label for="value">As-is value</label><input id="value" name="value" type="text" inputmode="decimal"></div>
         <div class="field"><label for="owed">Current amount owed, if already owned</label><input id="owed" name="owed" type="text" inputmode="decimal"></div>
