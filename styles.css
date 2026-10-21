@@ -281,3 +281,8 @@ footer{background:var(--ink);color:var(--fog);padding:48px 0 56px;font-size:13px
   .compare{display:block;overflow-x:auto;font-size:14px}
   .compare th,.compare td{min-width:150px}
 }
+/* social icons, footer */
+.social{display:flex;gap:14px;margin:18px 0 22px;padding:0}
+.social a{color:var(--grey);opacity:.75;display:inline-flex;padding:4px;border-radius:6px;transition:opacity .15s,color .15s}
+.social a:hover,.social a:focus-visible{opacity:1;color:#fff;outline:none}
+.social svg{display:block}
