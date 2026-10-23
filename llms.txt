@@ -1,6 +1,6 @@
-# MyBridge Loans (mybridge.loans)
+# My Bridge Loans (mybridge.loans)
 
-> MyBridge Loans is a California-licensed private money / hard money bridge lender and mortgage broker based in Fountain Valley, California. We fund business-purpose bridge loans secured by real estate in 26 states, directly through our own private investors. First and second trust deeds, commercial, and business-purpose loans on owner-occupied homes. We do not fund construction loans. Consumer home loans (conventional, FHA, VA, non-QM) are brokered in California only.
+> My Bridge Loans is a California-licensed private money / hard money bridge lender and mortgage broker based in Fountain Valley, California. We fund business-purpose bridge loans secured by real estate in 26 states, directly through our own private investors. First and second trust deeds, commercial, and business-purpose loans on owner-occupied homes. We do not fund construction loans. Consumer home loans (conventional, FHA, VA, non-QM) are brokered in California only.
 
 ## Key facts
 - Legal name: My Bridge Loans Corporation
@@ -27,7 +27,7 @@
 Alabama, Arizona, California, Colorado, Connecticut, Florida, Georgia, Hawaii, Illinois, Kansas, Kentucky, Massachusetts, Missouri, Montana, New Jersey, New Mexico, Nevada (no 2nds), North Carolina, Ohio, Oklahoma, Pennsylvania, South Carolina, Tennessee, Texas (no 2nds), Washington, West Virginia
 
 ## Pages
-- [About MyBridge Loans](https://mybridge.loans/about.html): who runs it, how it works, key facts, differentiators
+- [About My Bridge Loans](https://mybridge.loans/about.html): who runs it, how it works, key facts, differentiators
 - [Home](https://mybridge.loans/): loan programs, terms, fees, FAQ, states, scenario form
 - [Hard money 2nd trust deed in Orange County](https://mybridge.loans/hard-money-2nd-trust-deed-orange-county.html): usually 60% CLTV behind a current first, funded examples; our most used product
 - [Cash-out loan on a rental property](https://mybridge.loans/cash-out-loan-rental-property.html): 65% LTV on a 1st, 60% CLTV on a 2nd, no income docs, listed-for-sale OK
