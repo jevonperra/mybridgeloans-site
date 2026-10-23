@@ -210,7 +210,7 @@
       btn.disabled=true; const orig=btn.textContent; btn.textContent='Sending';
       try{
         // Send only the formatted message so each field appears once in the email.
-        const payload = {access_key: FORM_KEY, subject: subject, from_name: 'My Bridge Loans site', replyto: email.value, botcheck: '', message: body.split('\n').map(l=>'• '+l).join('\n')};
+        const payload = {access_key: FORM_KEY, subject: subject, from_name: 'My Bridge Loans site', replyto: email.value, message: body.split('\n').map(l=>'• '+l).join('\n')};
         const r = await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(payload)});
         const data = await r.json();
         if(!r.ok || !data.success) throw new Error(data.message||'send failed');
