@@ -229,9 +229,13 @@
 <section class="submit" id="submit">
   <div class="wrap narrow">
     <h2>Submit a scenario</h2>
-    <p class="lede">Email and the property address, city and state are required. Send whatever else you have. We will tell you what we still need.</p>
+    <p class="lede">Your name, phone, email, and the property address, city and state are required. Send whatever else you have. We will tell you what we still need.</p>
     <form id="scenario" novalidate>
       <input type="text" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="grid2">
+        <div class="field"><label for="fullname">Your name</label><input id="fullname" name="fullname" type="text" required autocomplete="name"></div>
+        <div class="field"><label for="phone">Your phone</label><input id="phone" name="phone" type="tel" required autocomplete="tel" inputmode="tel" placeholder="949-555-0123"></div>
+      </div>
       <div class="field"><label for="email">Your email</label><input id="email" name="email" type="email" required autocomplete="email"></div>
       <div class="field"><label for="street">Property street address</label><input id="street" name="street" type="text" required autocomplete="street-address" placeholder="123 Main St"></div>
       <div class="grid2">
