@@ -194,30 +194,24 @@
       const fullname=form.fullname, phone=form.phone;
       if(!fullname.value.trim()){ err.textContent='Enter your name.'; fullname.setAttribute('aria-invalid','true'); fullname.focus(); return; }
       fullname.removeAttribute('aria-invalid');
-      if(phone.value.replace(/\D/g,'').length<10){ err.textContent='Enter a phone number with area code.'; phone.setAttribute('aria-invalid','true'); phone.focus(); return; }
-      phone.removeAttribute('aria-invalid');
       if(!email.value || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)){
         err.textContent = 'Enter the email you want the answer sent to.'; email.setAttribute('aria-invalid','true'); email.focus(); return;
       }
       email.removeAttribute('aria-invalid'); err.textContent='';
       const street=form.street, city=form.city, state=form.state;
-      for(const f of [street,city,state]){
-        if(!f.value.trim()){ err.textContent='Enter the property street address, city and state.'; f.setAttribute('aria-invalid','true'); f.focus(); return; }
-        f.removeAttribute('aria-invalid');
-      }
       if(form.botcheck && form.botcheck.value) return; // honeypot
-      const fullAddress = `${street.value.trim()}, ${city.value.trim()}, ${state.value}`;
-      const fd = new FormData(form); const lines = ['Name: '+fullname.value.trim(), 'Phone: '+phone.value.trim(), 'Email: '+email.value.trim(), 'Property address: '+fullAddress];
+      const fullAddress = [street.value.trim(), city.value.trim(), state.value].filter(Boolean).join(', ');
+      const fd = new FormData(form); const lines = ['Name: '+fullname.value.trim(), 'Phone: '+(phone.value.trim()||'not given'), 'Email: '+email.value.trim(), 'Property address: '+(fullAddress||'not given')];
       const skip = ['botcheck','street','city','state','fullname','phone','email'];
       for(const [k,v] of fd.entries()) if(v && !skip.includes(k)) lines.push(`${labels[k]||k}: ${v}`);
-      const subject = 'Scenario: ' + fullAddress + ' (' + fullname.value.trim() + ')';
+      const subject = 'Scenario: ' + (fullAddress || 'no address given') + ' (' + fullname.value.trim() + ')';
       const body = lines.join('\n');
       if(FORM_KEY==='REPLACE_WITH_WEB3FORMS_KEY'){ showFallback(subject, body); return; }
       btn.disabled=true; const orig=btn.textContent; btn.textContent='Sending';
       try{
         const payload = {access_key: FORM_KEY, subject: subject, from_name: 'My Bridge Loans site', replyto: email.value, message: body};
         for(const [k,v] of fd.entries()) if(k!=='botcheck') payload[k]=v;
-        payload.address = fullAddress;
+        if(fullAddress) payload.address = fullAddress;
         const r = await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(payload)});
         const data = await r.json();
         if(!r.ok || !data.success) throw new Error(data.message||'send failed');
