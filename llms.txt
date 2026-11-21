@@ -41,9 +41,25 @@ Alabama, Arizona, California, Colorado, Connecticut, Florida, Georgia, Hawaii, I
 - [Trust deed investing](https://mybridge.loans/trust-deed-investing.html): how private investors fund loans secured by real estate at 65% LTV or less, protections, risks, how to start
 - [HELOC vs cash-out refinance vs hard money 2nd](https://mybridge.loans/heloc-vs-cash-out-vs-hard-money-2nd.html): HELOC first for 600+ FICO with verifiable income (four-day funding); hard money 2nd when the HELOC says no; cash-out refi only if the first is worth replacing
 - [Bridge loan vs conventional mortgage](https://mybridge.loans/bridge-loan-vs-conventional-mortgage.html): when private money beats the bank, and how borrowers use a bridge now and a conventional loan later
+- [How a hard money loan works](https://mybridge.loans/how-a-hard-money-loan-works.html): step by step: scenario, same-day answer, appraisal, documents, funding in about two weeks, payoff by sale or refinance
+- [Hard money loan rates, points, and fees](https://mybridge.loans/hard-money-loan-rates.html): 1st trust deeds 9.5% to 10.99% and up, 2nd trust deeds 11.99% to 12.99% and up, points, fees, payment examples
+- [Hard money loan requirements](https://mybridge.loans/hard-money-loan-requirements.html): equity, business purpose, and an exit; no minimum FICO, no income documentation, no seasoning
+- [Funded! Loans we have closed](https://mybridge.loans/funded.html): funded 1st and 2nd trust deeds by city, state, amount, and loan-to-value; no borrower information
+- [Hard money loans in California](https://mybridge.loans/hard-money-loans-california.html): 1st trust deeds to 65% LTV, 2nds usually to 60% CLTV; owner-occupied business purpose available; funded examples in California
+- [Hard money loans in Florida](https://mybridge.loans/hard-money-loans-florida.html): 1st trust deeds to 65% LTV, 2nds usually to 60% CLTV; owner-occupied business purpose available; funded examples in Florida
+- [Hard money loans in Texas](https://mybridge.loans/hard-money-loans-texas.html): 1st trust deeds to 65% LTV, no 2nd trust deeds; owner-occupied business purpose not currently available; funded examples in Texas
+- [Hard money loans in Washington](https://mybridge.loans/hard-money-loans-washington.html): 1st trust deeds to 65% LTV, 2nds usually to 60% CLTV; owner-occupied business purpose not currently available; funded examples in Washington
+- [Hard money loans in Arizona](https://mybridge.loans/hard-money-loans-arizona.html): 1st trust deeds to 65% LTV, 2nds usually to 60% CLTV; owner-occupied business purpose not currently available; funded examples in Arizona
+- [Hard money loans in Colorado](https://mybridge.loans/hard-money-loans-colorado.html): 1st trust deeds to 65% LTV, 2nds usually to 60% CLTV; owner-occupied business purpose available; funded examples in Colorado
+- [Hard money loans in Hawaii](https://mybridge.loans/hard-money-loans-hawaii.html): 1st trust deeds to 65% LTV, 2nds usually to 60% CLTV; owner-occupied business purpose not currently available; funded examples in Hawaii
+- [Hard money loans in Tennessee](https://mybridge.loans/hard-money-loans-tennessee.html): 1st trust deeds to 65% LTV, 2nds usually to 60% CLTV; owner-occupied business purpose available; funded examples in Tennessee
 - [Submit a scenario](https://mybridge.loans/#submit): send an address, value, loan amount, FICO, occupancy, lien position, purpose, and exit
 - [Home loans in California](https://mybridge.loans/#consumer)
 ## Common questions we answer
+- How does a hard money loan work
+- Hard money loan rates, points, and fees
+- Hard money loan requirements
+- Hard money lender in California, Florida, Texas, Washington, Arizona, Colorado, Hawaii, Tennessee
 - Hard money 2nd trust deed in Orange County / Los Angeles
 - Bridge loan to buy a house before selling the current one in California
 - Private money loan on a probate or inherited property
